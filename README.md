@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # SourceControlGitHubAndBitbucket
+=======
+# soucercontrolgithubandbitbucket README
+>>>>>>> 8516f69381cb36a7f3a8d055ce4691f150127d7a
 
 Este é um gerenciador de repositórios GitHub e Bitbucket que permite realizar commits e pushs diretamente pelo VS Code.
 
