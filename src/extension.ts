@@ -239,7 +239,7 @@ export function activate(context: vscode.ExtensionContext) {
       if (!provider.githubBranch || !provider.bitbucketBranch) {
         vscode.window.showErrorMessage("Selecione as branches antes de fazer push.");
         return;
-      }
+      } 
  
       try {
         await runGitCommand(`git pull --rebase origin ${provider.githubBranch}`, repoPath);
