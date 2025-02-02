@@ -240,7 +240,7 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.window.showErrorMessage("Selecione as branches antes de fazer push.");
         return;
       }
-
+ 
       try {
         await runGitCommand(`git pull --rebase origin ${provider.githubBranch}`, repoPath);
         await runGitCommand(`git push origin ${provider.githubBranch}`, repoPath);
