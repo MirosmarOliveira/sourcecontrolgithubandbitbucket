@@ -1,8 +1,13 @@
 {
-  "name": "soucecontrolgithubandbitbucket",
-  "displayName": "Soucecontrolgithubandbitbucket",
-  "description": "commit e push para github e bitbucket",
-  "version": "0.0.1",
+  "name": "sourcecontrolgithubandbitbucket",
+  "displayName": "Source Control GitHub and Bitbucket",
+  "description": "Commit e push para GitHub e Bitbucket diretamente no VSCode.",
+  "version": "0.0.2",
+  "publisher": "seu-nome", 
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seu-repositorio/sourcecontrolgithubandbitbucket.git"
+  },
   "engines": {
     "vscode": "^1.96.0"
   },
@@ -10,10 +15,30 @@
     "Other"
   ],
   "activationEvents": [
-    "onView:githubBitbucketPanel"
+    "onView:gitHubBitbucketView",
+    "onCommand:sourcecontrolgithubandbitbucket.commit",
+    "onCommand:sourcecontrolgithubandbitbucket.push",
+    "onCommand:sourcecontrolgithubandbitbucket.refresh"
   ],
   "main": "./dist/extension.js",
   "contributes": {
+    "commands": [
+      {
+        "command": "sourcecontrolgithubandbitbucket.commit",
+        "title": "Commit",
+        "category": "GitHub & Bitbucket"
+      },
+      {
+        "command": "sourcecontrolgithubandbitbucket.push",
+        "title": "Push",
+        "category": "GitHub & Bitbucket"
+      },
+      {
+        "command": "sourcecontrolgithubandbitbucket.refresh",
+        "title": "Atualizar View",
+        "category": "GitHub & Bitbucket"
+      }
+    ],
     "viewsContainers": {
       "activitybar": [
         {
@@ -26,17 +51,12 @@
     "views": {
       "githubBitbucketContainer": [
         {
-          "id": "githubBitbucketPanel",
-          "name": "Repositórios"
+          "id": "gitHubBitbucketView",
+          "name": "Gerenciador Git",
+          "contextualTitle": "Gerenciar GitHub & Bitbucket"
         }
       ]
-    },
-    "commands": [
-      {
-        "command": "soucecontrolgithubandbitbucket.helloWorld",
-        "title": "Hello World"
-      }
-    ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
@@ -50,17 +70,17 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.96.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
+    "@types/vscode": "^1.96.0",
     "@typescript-eslint/eslint-plugin": "^8.17.0",
     "@typescript-eslint/parser": "^8.17.0",
-    "eslint": "^9.16.0",
-    "typescript": "^5.7.2",
-    "ts-loader": "^9.5.1",
-    "webpack": "^5.95.0",
-    "webpack-cli": "^5.1.4",
     "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1"
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.19.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.7.2",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
   }
 }
