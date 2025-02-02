@@ -1,4 +1,4 @@
-# soucecontrolgithubandbitbucket README
+# soucercontrolgithubandbitbucket README
 
 This is the README for your extension "soucecontrolgithubandbitbucket". After writing up a brief description, we recommend including the following sections.
 
